@@ -5,15 +5,8 @@ import (
 )
 
 func cleanInput(text string) []string {
-	lowerText := strings.ToLower(text)
-	textNoWhiteSpace := strings.TrimSpace(lowerText)
-	listWords := strings.Split(textNoWhiteSpace, " ")
-	cleanedInput := []string{}
+	output := strings.ToLower(text)
+	words := strings.Fields(output)
 
-	for _, str := range listWords {
-		if str != "" {
-			cleanedInput = append(cleanedInput, str)
-		}
-	}
-	return cleanedInput
+	return words
 }
